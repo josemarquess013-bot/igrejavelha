@@ -37,7 +37,7 @@ ul {
     font-size: 18px;
 }
 
-/* IMAGEM 3D */
+/* 🔥 IMAGEM 3D */
 .img-3d {
     display: flex;
     justify-content: center;
@@ -50,16 +50,22 @@ ul {
     animation: flutuar 4s ease-in-out infinite;
     transform-style: preserve-3d;
     filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6));
+    transition: transform 0.4s ease, scale 0.4s ease;
 }
 
-/* ANIMAÇÃO */
+/* 🖱️ EFEITO AO PASSAR O MOUSE */
+.img-3d img:hover {
+    transform: scale(1.1) rotateY(15deg);
+}
+
+/* ✨ ANIMAÇÃO FLUTUAR */
 @keyframes flutuar {
     0% { transform: translateY(0px) rotateY(0deg); }
-    50% { transform: translateY(-20px) rotateY(10deg); }
+    50% { transform: translateY(-20px) rotateY(8deg); }
     100% { transform: translateY(0px) rotateY(0deg); }
 }
 
-/* VIDEO */
+/* 🎥 VIDEO */
 .video {
     text-align: center;
     margin-top: 50px;
@@ -78,17 +84,17 @@ iframe {
 
     <h1>Igreja Velha de São Mateus</h1>
 
-    <!-- 🔥 PRIMEIRA IMAGEM (img2) -->
+    <!-- 🔥 PRIMEIRA IMAGEM -->
     <div class="img-3d">
-        <img src="img2.png">
+        <img src="img1.png">
     </div>
 
     <p>
         A Igreja Velha de São Mateus é uma das construções históricas mais importantes do norte do Espírito Santo.
         <br><br>
-        Ela foi erguida ainda no período colonial, por volta dos séculos XVII e XVIII, quando a região de São Mateus começou a se desenvolver com a presença de colonizadores portugueses. A igreja era um centro religioso fundamental, ligada à tradição católica trazida pelos europeus e também influenciada pela atuação dos jesuítas na catequização indígena.
+        Ela foi erguida ainda no período colonial, por volta dos séculos XVII e XVIII, quando a região de São Mateus começou a se desenvolver com a presença de colonizadores portugueses.
         <br><br>
-        Com o passar do tempo, a construção sofreu desgaste natural, abandono e mudanças na cidade, até ficar em ruínas — por isso hoje é conhecida como “igreja velha”. Mesmo assim, suas estruturas ainda resistem e se tornaram um símbolo histórico e cultural da cidade.
+        Com o passar do tempo, a construção sofreu desgaste natural, abandono e mudanças na cidade.
     </p>
 
     <ul>
@@ -101,9 +107,9 @@ iframe {
         Hoje, a igreja não funciona mais para celebrações, mas continua sendo um ponto turístico importante.
     </p>
 
-    <!-- 🔥 SEGUNDA IMAGEM (img1) -->
+    <!-- 🔥 SEGUNDA IMAGEM -->
     <div class="img-3d">
-        <img src="img1.png">
+        <img src="img2.png">
     </div>
 
     <!-- 🎥 VIDEO -->
