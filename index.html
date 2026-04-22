@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+<meta charset="UTF-8">
+<title>Igreja Velha de São Mateus</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: url('https://images.unsplash.com/photo-1500530855697-b586d89ba3ee') no-repeat center center/cover;
+    color: white;
+}
+
+.overlay {
+    background-color: rgba(0, 0, 0, 0.7);
+    min-height: 100vh;
+    padding: 40px;
+}
+
+h1 {
+    text-align: center;
+    font-size: 40px;
+}
+
+p {
+    max-width: 800px;
+    margin: auto;
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+ul {
+    max-width: 800px;
+    margin: 20px auto;
+    font-size: 18px;
+}
+
+/* IMAGEM 3D */
+.img-3d {
+    display: flex;
+    justify-content: center;
+    margin: 40px 0;
+    perspective: 1000px;
+}
+
+.img-3d img {
+    width: 350px;
+    animation: flutuar 4s ease-in-out infinite;
+    transform-style: preserve-3d;
+    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6));
+}
+
+/* ANIMAÇÃO */
+@keyframes flutuar {
+    0% { transform: translateY(0px) rotateY(0deg); }
+    50% { transform: translateY(-20px) rotateY(10deg); }
+    100% { transform: translateY(0px) rotateY(0deg); }
+}
+
+/* VIDEO */
+.video {
+    text-align: center;
+    margin-top: 50px;
+}
+
+iframe {
+    max-width: 100%;
+    border-radius: 10px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="overlay">
+
+    <h1>Igreja Velha de São Mateus</h1>
+
+    <!-- 🔥 PRIMEIRA IMAGEM (SEGUNDA INVERTIDA) -->
+    <div class="img-3d">
+        <img src="Design_sem_nome__1_-removebg-preview.png">
+    </div>
+
+    <p>
+        A Igreja Velha de São Mateus é uma das construções históricas mais importantes do norte do Espírito Santo.
+        <br><br>
+        Ela foi erguida ainda no período colonial, por volta dos séculos XVII e XVIII, quando a região de São Mateus começou a se desenvolver com a presença de colonizadores portugueses. A igreja era um centro religioso fundamental, ligada à tradição católica trazida pelos europeus e também influenciada pela atuação dos jesuítas na catequização indígena.
+        <br><br>
+        Com o passar do tempo, a construção sofreu desgaste natural, abandono e mudanças na cidade, até ficar em ruínas — por isso hoje é conhecida como “igreja velha”. Mesmo assim, suas estruturas ainda resistem e se tornaram um símbolo histórico e cultural da cidade.
+    </p>
+
+    <ul>
+        <li>A origem colonial de São Mateus</li>
+        <li>A influência da Igreja Católica</li>
+        <li>A mistura de culturas</li>
+    </ul>
+
+    <p>
+        Hoje, a igreja não funciona mais para celebrações, mas continua sendo um ponto turístico importante.
+    </p>
+
+    <!-- 🔥 SEGUNDA IMAGEM (PRIMEIRA INVERTIDA) -->
+    <div class="img-3d">
+        <img src="Design_sem_nome-removebg-preview.png">
+    </div>
+
+    <!-- 🎥 VIDEO -->
+    <div class="video">
+        <h2>Vídeo sobre a Igreja</h2>
+        <iframe width="560" height="315"
+            src="https://www.youtube.com/embed/jSIMHipGWU0"
+            frameborder="0"
+            allowfullscreen>
+        </iframe>
+    </div>
+
+</div>
+
+</body>
+</html>
