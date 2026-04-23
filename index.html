@@ -5,162 +5,216 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Igreja Velha de São Mateus</title>
 
+<!-- 🔤 FONTE MODERNA -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
 <style>
 body {
     margin: 0;
-    font-family: Arial, sans-serif;
+    font-family: 'Poppins', sans-serif;
     color: white;
-
-    /* 🔥 DEGRADÊ ANIMADO */
-    background: linear-gradient(-45deg, #0f2027, #203a43, #2c5364, #1a1a2e);
-    background-size: 400% 400%;
-    animation: gradientBG 10s ease infinite;
+    background: linear-gradient(120deg, #0f2027, #203a43, #2c5364);
 }
 
-@keyframes gradientBG {
-    0% { background-position: 0% 50%; }
-    50% { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
+/* 🔥 NAVBAR */
+nav {
+    position: fixed;
+    width: 100%;
+    padding: 15px;
+    background: rgba(0,0,0,0.7);
+    text-align: center;
+    backdrop-filter: blur(10px);
+    z-index: 1000;
 }
 
-.overlay {
-    background-color: rgba(0, 0, 0, 0.6);
-    min-height: 100vh;
-    padding: 40px;
+nav a {
+    color: white;
+    margin: 0 20px;
+    text-decoration: none;
+    font-weight: 500;
 }
 
-/* 🔥 ELEMENTOS INICIAIS (ESCONDIDOS) */
+/* 🎬 HERO (ESTILO APPLE) */
+.hero {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.9)),
+    url('img1.png.png') center/cover no-repeat;
+}
+
+.hero h1 {
+    font-size: 48px;
+}
+
+.hero p {
+    font-size: 20px;
+    opacity: 0.8;
+}
+
+/* 🔥 BOTÃO */
+.btn {
+    margin-top: 20px;
+    padding: 12px 25px;
+    border-radius: 30px;
+    background: #fff;
+    color: black;
+    text-decoration: none;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #ddd;
+}
+
+/* 🧊 SEÇÕES */
+.section {
+    padding: 80px 20px;
+    text-align: center;
+}
+
+/* 🎬 SCROLL REVEAL */
 .reveal {
     opacity: 0;
     transform: translateY(60px);
-    transition: all 1s ease;
+    transition: 1s;
 }
 
-/* 🔥 QUANDO APARECE */
 .reveal.active {
     opacity: 1;
     transform: translateY(0);
 }
 
-h1 {
-    text-align: center;
-    font-size: 40px;
-}
-
-h2 {
-    text-align: center;
-    margin-top: 30px;
-}
-
-p {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 18px;
-    line-height: 1.6;
-    text-align: justify;
-}
-
-/* 🔥 IMAGEM 3D */
-.img-3d {
+/* 🧱 CARDS (ESTILO NETFLIX) */
+.cards {
     display: flex;
+    gap: 20px;
     justify-content: center;
-    margin: 40px 0;
-    perspective: 1000px;
+    flex-wrap: wrap;
 }
 
-.img-3d img {
-    width: 350px;
-    animation: flutuar 4s ease-in-out infinite;
-    transform-style: preserve-3d;
-    filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6));
-    transition: transform 0.4s ease;
+.card {
+    background: rgba(255,255,255,0.05);
+    backdrop-filter: blur(10px);
+    padding: 20px;
+    width: 250px;
+    border-radius: 15px;
+    transition: 0.3s;
 }
 
-.img-3d img:hover {
-    transform: scale(1.1) rotateY(15deg);
+.card:hover {
+    transform: scale(1.05);
 }
 
-@keyframes flutuar {
-    0% { transform: translateY(0px) rotateY(0deg); }
-    50% { transform: translateY(-20px) rotateY(8deg); }
-    100% { transform: translateY(0px) rotateY(0deg); }
+/* 🖼️ GALERIA */
+.galeria {
+    display: flex;
+    overflow-x: auto;
+    gap: 15px;
+    padding: 20px;
+}
+
+.galeria img {
+    height: 200px;
+    border-radius: 10px;
+    transition: 0.3s;
+}
+
+.galeria img:hover {
+    transform: scale(1.1);
 }
 
 /* 🎥 VIDEO */
-.video {
-    text-align: center;
-    margin-top: 50px;
+.video iframe {
+    width: 90%;
+    max-width: 600px;
+    border-radius: 10px;
 }
 
-iframe {
-    width: 100%;
-    max-width: 560px;
-    height: 315px;
-    border-radius: 10px;
+/* 🦶 FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    background: black;
 }
 </style>
 </head>
 
 <body>
 
-<div class="overlay">
+<!-- 🔥 NAV -->
+<nav>
+  <a href="#">Início</a>
+  <a href="#historia">História</a>
+  <a href="#galeria">Galeria</a>
+  <a href="#video">Vídeo</a>
+</nav>
 
-    <h1 class="reveal">Igreja Velha de São Mateus</h1>
+<!-- 🎬 HERO -->
+<section class="hero">
+    <h1>Igreja Velha de São Mateus</h1>
+    <p>Patrimônio histórico do Espírito Santo</p>
+    <a href="#historia" class="btn">Explorar</a>
+</section>
 
-    <div class="img-3d reveal">
+<!-- 🧊 HISTÓRIA -->
+<section class="section" id="historia">
+    <h2 class="reveal">História</h2>
+
+    <div class="cards">
+        <div class="card reveal">
+            <p>A Igreja Velha de São Mateus é um dos patrimônios históricos mais importantes da cidade.</p>
+        </div>
+
+        <div class="card reveal">
+            <p>Construída no período colonial, representa o início do desenvolvimento da região.</p>
+        </div>
+
+        <div class="card reveal">
+            <p>Hoje permanece em ruínas, preservando sua importância cultural e histórica.</p>
+        </div>
+    </div>
+</section>
+
+<!-- 🖼️ GALERIA -->
+<section class="section" id="galeria">
+    <h2 class="reveal">Galeria</h2>
+
+    <div class="galeria">
+        <img src="img1.png.png">
+        <img src="img2.png.png">
         <img src="img1.png.png">
     </div>
+</section>
 
-    <h2 class="reveal">História da Igreja Velha de São Mateus</h2>
+<!-- 🎥 VIDEO -->
+<section class="section video" id="video">
+    <h2 class="reveal">Vídeo</h2>
+    <iframe src="https://www.youtube.com/embed/jSIMHipGWU0"></iframe>
+</section>
 
-<p class="reveal">
-A <strong>Igreja Velha de São Mateus</strong> é um dos patrimônios históricos mais importantes da cidade de São Mateus. Construída durante o período colonial, por volta do século XVII, a igreja representa o início da ocupação e do desenvolvimento da região norte do Espírito Santo.
-</p>
+<!-- 🦶 FOOTER -->
+<footer>
+    <p>© 2026 - Igreja Velha de São Mateus</p>
+</footer>
 
-<p class="reveal">
-Na época, a igreja desempenhava um papel fundamental na vida da comunidade, sendo não apenas um local de fé e celebrações religiosas, mas também um ponto de encontro social e cultural para os moradores da vila.
-</p>
-
-<p class="reveal">
-Sua arquitetura simples, marcada pela influência colonial portuguesa, reflete o estilo das primeiras construções religiosas erguidas no Brasil. Ao longo dos anos, a igreja sofreu desgastes causados pelo tempo, permanecendo hoje em ruínas, mas conservando grande valor histórico e simbólico.
-</p>
-
-<p class="reveal">
-Mesmo em ruínas, a Igreja Velha continua sendo um importante marco cultural, atraindo visitantes e preservando a memória das origens da cidade. O local representa a força da história, da fé e da identidade do povo mateense.
-</p>
-
-<p class="reveal">
-Visitar a Igreja Velha é revisitar parte da história de São Mateus e reconhecer a importância da preservação do patrimônio histórico para as futuras gerações.
-</p>
-    
-    <div class="img-3d reveal">
-        <img src="img2.png.png">
-    </div>
-
-    <div class="video reveal">
-        <h2>Vídeo sobre a Igreja</h2>
-        <iframe src="https://www.youtube.com/embed/jSIMHipGWU0"
-            frameborder="0"
-            allowfullscreen>
-        </iframe>
-    </div>
-
-</div>
-
-<!-- 🔥 SCRIPT ANIMAÇÃO AO ROLAR -->
+<!-- 🎬 SCRIPT -->
 <script>
 function reveal() {
-    var reveals = document.querySelectorAll(".reveal");
+    let reveals = document.querySelectorAll(".reveal");
 
-    for (var i = 0; i < reveals.length; i++) {
-        var windowHeight = window.innerHeight;
-        var elementTop = reveals[i].getBoundingClientRect().top;
-        var elementVisible = 100;
+    reveals.forEach(el => {
+        let windowHeight = window.innerHeight;
+        let elementTop = el.getBoundingClientRect().top;
 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
+        if (elementTop < windowHeight - 100) {
+            el.classList.add("active");
         }
-    }
+    });
 }
 
 window.addEventListener("scroll", reveal);
