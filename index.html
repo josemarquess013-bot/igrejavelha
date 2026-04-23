@@ -2,6 +2,7 @@
 <html lang="pt-br">
 <head>
 <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Igreja Velha de São Mateus</title>
 
 <style>
@@ -23,18 +24,37 @@ h1 {
     font-size: 40px;
 }
 
+h2 {
+    text-align: center;
+    margin-top: 30px;
+}
+
 p {
     max-width: 800px;
-    margin: auto;
+    margin: 20px auto;
     font-size: 18px;
     line-height: 1.6;
     text-align: justify;
 }
 
-ul {
-    max-width: 800px;
-    margin: 20px auto;
-    font-size: 18px;
+/* 🔥 ANIMAÇÃO TEXTO */
+.fade {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: aparecer 1s ease forwards;
+}
+
+.fade:nth-of-type(1) { animation-delay: 0.2s; }
+.fade:nth-of-type(2) { animation-delay: 0.4s; }
+.fade:nth-of-type(3) { animation-delay: 0.6s; }
+.fade:nth-of-type(4) { animation-delay: 0.8s; }
+.fade:nth-of-type(5) { animation-delay: 1s; }
+
+@keyframes aparecer {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
 
 /* 🔥 IMAGEM 3D */
@@ -72,7 +92,9 @@ ul {
 }
 
 iframe {
-    max-width: 100%;
+    width: 100%;
+    max-width: 560px;
+    height: 315px;
     border-radius: 10px;
 }
 </style>
@@ -89,29 +111,25 @@ iframe {
         <img src="img1.png.png">
     </div>
 
-    <p>
+    <h2>História da Igreja Velha de São Mateus</h2>
+
+    <p class="fade">
         A <strong>Igreja Velha de São Mateus</strong> é um dos patrimônios históricos mais importantes da cidade de São Mateus. Construída durante o período colonial, por volta do século XVII, a igreja representa o início da ocupação e do desenvolvimento da região norte do Espírito Santo.
     </p>
 
-    <p>
+    <p class="fade">
         Na época, a igreja desempenhava um papel fundamental na vida da comunidade, sendo não apenas um local de fé e celebrações religiosas, mas também um ponto de encontro social e cultural para os moradores da vila.
     </p>
 
-    <ul>
-        <li>Início da ocupação da região</li>
-        <li>Importância religiosa e social</li>
-        <li>Influência da arquitetura colonial portuguesa</li>
-    </ul>
-
-    <p>
+    <p class="fade">
         Sua arquitetura simples, marcada pela influência colonial portuguesa, reflete o estilo das primeiras construções religiosas erguidas no Brasil. Ao longo dos anos, a igreja sofreu desgastes causados pelo tempo, permanecendo hoje em ruínas, mas conservando grande valor histórico e simbólico.
     </p>
 
-    <p>
+    <p class="fade">
         Mesmo em ruínas, a Igreja Velha continua sendo um importante marco cultural, atraindo visitantes e preservando a memória das origens da cidade. O local representa a força da história, da fé e da identidade do povo mateense.
     </p>
 
-    <p>
+    <p class="fade">
         Visitar a Igreja Velha é revisitar parte da história de São Mateus e reconhecer a importância da preservação do patrimônio histórico para as futuras gerações.
     </p>
 
@@ -123,8 +141,7 @@ iframe {
     <!-- 🎥 VIDEO -->
     <div class="video">
         <h2>Vídeo sobre a Igreja</h2>
-        <iframe width="560" height="315"
-            src="https://www.youtube.com/embed/jSIMHipGWU0"
+        <iframe src="https://www.youtube.com/embed/jSIMHipGWU0"
             frameborder="0"
             allowfullscreen>
         </iframe>
