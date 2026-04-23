@@ -17,7 +17,6 @@ body {
     animation: gradientBG 10s ease infinite;
 }
 
-/* 🎨 ANIMAÇÃO DO DEGRADÊ */
 @keyframes gradientBG {
     0% { background-position: 0% 50%; }
     50% { background-position: 100% 50%; }
@@ -28,6 +27,19 @@ body {
     background-color: rgba(0, 0, 0, 0.6);
     min-height: 100vh;
     padding: 40px;
+}
+
+/* 🔥 ELEMENTOS INICIAIS (ESCONDIDOS) */
+.reveal {
+    opacity: 0;
+    transform: translateY(60px);
+    transition: all 1s ease;
+}
+
+/* 🔥 QUANDO APARECE */
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 h1 {
@@ -48,26 +60,6 @@ p {
     text-align: justify;
 }
 
-/* 🔥 ANIMAÇÃO TEXTO */
-.fade {
-    opacity: 0;
-    transform: translateY(30px);
-    animation: aparecer 1s ease forwards;
-}
-
-.fade:nth-of-type(1) { animation-delay: 0.2s; }
-.fade:nth-of-type(2) { animation-delay: 0.4s; }
-.fade:nth-of-type(3) { animation-delay: 0.6s; }
-.fade:nth-of-type(4) { animation-delay: 0.8s; }
-.fade:nth-of-type(5) { animation-delay: 1s; }
-
-@keyframes aparecer {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
 /* 🔥 IMAGEM 3D */
 .img-3d {
     display: flex;
@@ -81,14 +73,13 @@ p {
     animation: flutuar 4s ease-in-out infinite;
     transform-style: preserve-3d;
     filter: drop-shadow(0px 10px 20px rgba(0,0,0,0.6));
-    transition: transform 0.4s ease, scale 0.4s ease;
+    transition: transform 0.4s ease;
 }
 
 .img-3d img:hover {
     transform: scale(1.1) rotateY(15deg);
 }
 
-/* ✨ ANIMAÇÃO FLUTUAR */
 @keyframes flutuar {
     0% { transform: translateY(0px) rotateY(0deg); }
     50% { transform: translateY(-20px) rotateY(8deg); }
@@ -114,39 +105,39 @@ iframe {
 
 <div class="overlay">
 
-    <h1>Igreja Velha de São Mateus</h1>
+    <h1 class="reveal">Igreja Velha de São Mateus</h1>
 
-    <div class="img-3d">
+    <div class="img-3d reveal">
         <img src="img1.png.png">
     </div>
 
-    <h2>História da Igreja Velha de São Mateus</h2>
+    <h2 class="reveal">História da Igreja Velha de São Mateus</h2>
 
-    <p class="fade">
-        A <strong>Igreja Velha de São Mateus</strong> é um dos patrimônios históricos mais importantes da cidade de São Mateus...
+    <p class="reveal">
+        A <strong>Igreja Velha de São Mateus</strong> é um dos patrimônios históricos mais importantes da cidade de São Mateus. Construída durante o período colonial, por volta do século XVII, a igreja representa o início da ocupação e do desenvolvimento da região norte do Espírito Santo.
     </p>
 
-    <p class="fade">
-        Na época, a igreja desempenhava um papel fundamental na vida da comunidade...
+    <p class="reveal">
+        Na época, a igreja desempenhava um papel fundamental na vida da comunidade, sendo não apenas um local de fé e celebrações religiosas, mas também um ponto de encontro social e cultural para os moradores da vila.
     </p>
 
-    <p class="fade">
-        Sua arquitetura simples, marcada pela influência colonial portuguesa...
+    <p class="reveal">
+        Sua arquitetura simples, marcada pela influência colonial portuguesa, reflete o estilo das primeiras construções religiosas erguidas no Brasil. Ao longo dos anos, a igreja sofreu desgastes causados pelo tempo, permanecendo hoje em ruínas, mas conservando grande valor histórico e simbólico.
     </p>
 
-    <p class="fade">
-        Mesmo em ruínas, a Igreja Velha continua sendo um importante marco cultural...
+    <p class="reveal">
+        Mesmo em ruínas, a Igreja Velha continua sendo um importante marco cultural, atraindo visitantes e preservando a memória das origens da cidade. O local representa a força da história, da fé e da identidade do povo mateense.
     </p>
 
-    <p class="fade">
-        Visitar a Igreja Velha é revisitar parte da história de São Mateus...
+    <p class="reveal">
+        Visitar a Igreja Velha é revisitar parte da história de São Mateus e reconhecer a importância da preservação do patrimônio histórico para as futuras gerações.
     </p>
 
-    <div class="img-3d">
+    <div class="img-3d reveal">
         <img src="img2.png.png">
     </div>
 
-    <div class="video">
+    <div class="video reveal">
         <h2>Vídeo sobre a Igreja</h2>
         <iframe src="https://www.youtube.com/embed/jSIMHipGWU0"
             frameborder="0"
@@ -155,6 +146,26 @@ iframe {
     </div>
 
 </div>
+
+<!-- 🔥 SCRIPT ANIMAÇÃO AO ROLAR -->
+<script>
+function reveal() {
+    var reveals = document.querySelectorAll(".reveal");
+
+    for (var i = 0; i < reveals.length; i++) {
+        var windowHeight = window.innerHeight;
+        var elementTop = reveals[i].getBoundingClientRect().top;
+        var elementVisible = 100;
+
+        if (elementTop < windowHeight - elementVisible) {
+            reveals[i].classList.add("active");
+        }
+    }
+}
+
+window.addEventListener("scroll", reveal);
+window.addEventListener("load", reveal);
+</script>
 
 </body>
 </html>
